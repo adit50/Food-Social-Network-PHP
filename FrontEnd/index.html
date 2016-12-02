@@ -1,0 +1,253 @@
+<!--THIS IS COOKZZ FOOD SOCIAL NETWORK APP WITH HELP OF PHONEGAP AND JQUERY MOBILE. SIMPLE WRITTEN AND EASY TO UNDERSTAND.-->
+<!-- CONTACT:{NAME:ADITYA RAJ},{EMAIL:ADITRAJ2@GMAIL.COM} -->
+<!-- LOGIN PAGE -->
+<!-- THANK YOU :) -->
+<html>
+<head>
+<style type="text/css">
+.ui-header {
+background: white
+!important;
+color:white;
+}
+.ui-focus {
+outline:none;
+-moz-box-shadow:none !important;
+-webkit-box-shadow:none !important;
+box-shadow:none !important;
+}
+.ui-btn-active {
+color:white !important;
+background: #DA2121 !important;
+border: none;
+box-shadow:none;
+}
+#login {
+background: green;
+color:white;
+font-weight:100;
+}
+#joinus {
+background: transparent;
+color:black;
+font-weight:100;
+border: 1px solid black;
+}
+#forget_pass {
+background: red;
+color:white;
+font-weight:100;
+}
+#sign {
+background: green;
+color:white;
+font-weight:100;
+}
+button:focus {
+border: none !important;
+box-shadow:none !important;
+outline:0;
+}
+.ui-input-text.ui-custom {
+border:none;
+box-shadow:none;
+}
+#signin {
+background-color:white;
+height:100%;
+}
+</style>
+<title>Welcome to Foodora</title>
+<script type="text/javascript" src="jquery-latest.js"></script>
+<script type="text/javascript" src="jq/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="jq/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="cordova.js"></script>
+<meta name="viewport" content="initial-scale=1 , maximum-scale=1">
+</head>
+<body>
+<div data-role="page" id="signin">
+<div align="center" data-role="content" style="padding-top:10px;">
+<div align="left"><img src="images/icon.gif" style="height:150px; width:150px;"/>
+<font size="" color="#DA2121" style="position:absolute; top:35px;"><img src="images/logo.png" width="150px" height="80px"/></font></div>
+<div id="loginf" style="padding-top:100px;">
+<input type="text" id="txtEmail" placeholder="Email Address" data-wrapper-class="ui-custom" style="border-bottom:1px solid black; font-size:15px; margin-bottom:15px;"/>
+<input type="password" id="txtPassword" placeholder="Password" data-wrapper-class="ui-custom" style="border-bottom:1px solid black; font-size:15px; margin-bottom:20px;"/>
+<a href="#forget" data-rel="popup" style="text-decoration:none; color:grey; margin-left:55%; font-size:14px; font-weight:100;">Forgot Password ?</a><br/>
+<button id="login" style="margin-bottom:10px; margin-top:20px;">Login</button>
+<a href="#signup" style="text-decoration:none;"><button id="joinus">Join us</button></a><br/>
+</div>
+<div data-role="popup" id="forget" data-position-to ="window" data-overlay-theme="b" style="background-color:#FBF9ED; border:5px solid white;">
+<b>Forget Password ?</b><br/>
+<p>Enter your email address below and we'll sent you password . This must be same email address you use to log in to Cookzz.</p>
+<br/>
+Email:
+<table width="100%"><tr><td style="width:80%"><input type="text" id="semail" placeholder="Email" /></td><td>
+<button class="forget_pass" id="forget_pass">Go</button></td></tr></table>
+</div>
+<div data-role="popup" id="miss" data-position-to ="window" data-overlay-theme="b">
+<div data-role="header"><h3>Missed</h3></div>
+<p id="missed">Please enter an email-id</p>
+</div>
+</div>
+</div>
+<div data-role="page" id="signup" style="background-color:white;">
+<div align="center" data-role="content" style="padding-top:10px;">
+<div align="left"><img src="images/icon.gif" style="height:150px; width:150px;"/>
+<font size="" color="#DA2121" style="position:absolute; top:35px;"><img src="images/logo.png" width="150px" height="80px"/></font></div>
+<div id="signf">
+<input type="text" id="name" placeholder="Your Name" data-wrapper-class="ui-custom" style="border-bottom:1px solid black; font-size:15px; margin-bottom:10px;"/>
+<input type="text" id="Email" placeholder="Email Address" data-wrapper-class="ui-custom" style="border-bottom:1px solid black; font-size:15px; margin-bottom:10px;"/>
+<input type="password" id="pass1" placeholder="Password" data-wrapper-class="ui-custom" style="border-bottom:1px solid black; font-size:15px; margin-bottom:10px;"/>
+<input type="password" id="pass2" placeholder="Confirm Password" data-wrapper-class="ui-custom" style="border-bottom:1px solid black; font-size:15px; margin-bottom:15px;"/>
+<fieldset data-role="controlgroup" data-type="horizontal" style="font-size:15px; margin-bottom:10px;">
+<input type="radio" id="male" name="sex" class="gen" value="Male" checked="checked" />
+<label for="male">Male</label>
+<input type="radio" id="female" name="sex" class="gen" value="Female" />
+<label for="female">Female</label></fieldset>
+<button id="sign">Sign up</button><br/>
+<a href="#signin" style="text-decoration:none; color:black;">Already have an account ?</a>
+</div>
+<div data-role="popup" id="mis" data-position-to ="window" data-overlay-theme="b">
+<div data-role="header"><h3 id="status">Missed</h3></div>
+<p id="misse">Please enter an email-id</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(window).load(function() {
+$("#loginf").stop().animate({paddingTop: "0px"} , 1500);
+});
+$(document).ready(function() {
+if(localStorage.getItem("login")) {
+$("#login").attr('disabled' , 'disabled');
+$.mobile.loading("show" , {theme:'b' , text:"Signing in ..." , textonly:false, textVisible:true});
+var x = JSON.parse(localStorage.getItem("login"));
+window.location = 'home.html?id='+x.userid;
+$("#login").removeAttr('disabled');
+$.mobile.loading("hide");
+}
+$("#login").on('click' , function() {
+if(document.getElementById('txtEmail').value== "")
+{
+$("#miss").popup('open');
+$("#missed").html('Please enter an email-id');
+return false;
+}
+if(document.getElementById('txtPassword').value== "")
+{
+$("#miss").popup('open');
+$("#missed").html('Please enter password');
+return false;
+}
+else
+{
+$("#login").attr('disabled' , 'disabled');
+$.mobile.loading("show" , {theme:'b' , text:"Signing in ..." , textonly:false, textVisible:true});
+var user = $("#txtEmail").val();
+var pass = $("#txtPassword").val();
+var dataString = 'txtEmail='+ user.trim() +'&txtPassword='+ pass.trim();
+$.ajax({
+type:"POST",
+url:"http://localhost/Cookzz/chklogin.php",
+data: dataString,
+cache: false,
+success: function(response){
+if(response == 'no') {
+document.getElementById('txtPassword').style.border = '3px solid red';
+console.log(response);
+}else{
+var login = {};
+login.user = user.trim();
+login.pass = pass.trim();
+login.userid = response;
+localStorage.setItem("login" ,   JSON.stringify(login));
+console.log(JSON.parse(localStorage.getItem('login')));
+window.location = 'home.html?id='+response;
+}
+$.mobile.loading("hide");
+$("#login").removeAttr('disabled');
+} , error: function() {
+$.mobile.loading("hide");
+$("#login").removeAttr('disabled');
+alert('Network Error');
+}
+});
+return false;
+}
+});
+$("#sign").on('click' , function() {
+var radio = $('input[type=radio]:checked').val();
+if($("#name").val() == '') {
+$("#mis").popup('open');
+$("#misse").html('Please enter name');
+return false;
+}else if($("#Email").val() == '') {
+$("#mis").popup('open');
+$("#misse").html('Please enter Email');
+return false;
+}else if($("#pass1").val() == '' || $("#pass2").val() == '') {
+$("#mis").popup('open');
+$("#misse").html('Please fill password');
+return false;
+}else if($("#pass1").val() != $("#pass2").val()) {
+$("#mis").popup('open');
+$("#misse").html('Password must be same');
+return false;
+}
+$.mobile.loading("show" , {theme:'b' , text:"Please wait ..." , textonly:false, textVisible:true});
+$("#sign").attr('disabled' , 'disabled');
+var dataString = 'name='+$("#name").val().trim()+'&&email='+$("#Email").val().trim()+'&&pass='+$("#pass1").val().trim()+'&&sex='+radio;
+$.ajax({
+type:"POST",
+url:"http://localhost/Cookzz/Register.php",
+data: dataString,
+cache: false,
+success: function(response){
+if(response == 'Account already Exist !!') {
+$("#mis").popup('open');
+$("#status").text("Already Exist");
+$("#misse").html(response);
+}else{
+var login = {};
+login.user = $("#Email").val().trim();
+login.pass = $("#pass1").val().trim();
+login.userid = response;
+localStorage.setItem("login" ,   JSON.stringify(login));
+console.log(JSON.parse(localStorage.getItem('login')));
+window.location = 'home.html?id='+response;
+}
+$.mobile.loading("hide");
+$("#sign").removeAttr('disabled');
+} , error: function() {
+$.mobile.loading("hide");
+$("#sign").removeAttr('disabled');
+alert('Network Error');
+}
+});
+});
+$(".forget_pass").on('click' , function() {
+if($("#semail").val() == '') {
+alert("Please enter your Email");
+}else{
+$(".forget_pass").text('Wait..');
+$(".forget_pass").button();
+$(".forget_pass").attr('disabled' , 'disabled');
+var dataStr = 'email='+$("#semail").val().trim();
+$.ajax({
+type:"GET",
+url:"http://cookzz.in/forget_password.php",
+data: dataStr,
+cache: false,
+success: function(response){
+alert(response);
+}
+});
+$(".forget_pass").removeAttr('disabled');
+$(".forget_pass").text('Go');
+$(".forget_pass").button();
+}
+});
+});
+</script>
+</body>
+</html>

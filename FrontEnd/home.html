@@ -1,0 +1,2180 @@
+<!--THIS IS COOKZZ FOOD SOCIAL NETWORK APP WITH HELP OF PHONEGAP AND JQUERY MOBILE. SIMPLE WRITTEN AND EASY TO UNDERSTAND.-->
+<!-- CONTACT:{NAME:ADITYA RAJ},{EMAIL:ADITRAJ2@GMAIL.COM} -->
+<!-- HOME PAGE -->
+<!-- THANK YOU :) -->
+<html>
+<head>
+<style type="text/css">
+.view_head {
+background-color: rgba(213, 33, 33 , 0.0);
+}
+.ui-focus {
+outline:none;
+-moz-box-shadow:none !important;
+-webkit-box-shadow:none !important;
+box-shadow:none !important;
+}
+a:focus {
+outline:none;
+-moz-box-shadow:none !important;
+-webkit-box-shadow:none !important;
+box-shadow:none !important;
+}
+.loader {
+width:100%;
+height:100%;
+position:fixed;
+padding-top:10%;
+left:0px;
+z-index:9999;
+background:url('images/GIF3.gif') 50% 30% no-repeat;
+background-color:white;
+}
+.loader1 {
+width:32px;
+height:32px;
+z-index:9999;
+}
+.loader2 {
+width:32px;
+height:32px;
+z-index:9999;
+}
+#loader3 {
+width:32px;
+height:32px;
+z-index:9999;
+}
+.panel a {
+color: #FFF !important;
+text-shadow: 0 0 0 rgba(0,0,0,0);
+padding: 15px 20px 15px 60px;
+display:block;
+position:relative;
+font-weight:400;
+}
+.panel ul {
+padding: 0;
+margin:0;
+}
+.txt {
+color:black;
+display:inline-block;
+padding-left:3px;
+border-radius:5px;
+font-size:13;
+font-weight:100;
+padding-right:4px;
+margin:0;
+padding-top:5px;
+padding-bottom:2px;
+max-width:250px;
+background-color:white;
+}
+.arrow{
+width:0;
+height:0;
+border-left:5px solid white;
+border-top:5px solid transparent;
+border-bottom:5px solid transparent;
+display:inline-block;
+margin:0;
+position:relative;
+top:1;
+}
+.arrow_left{
+width:0;
+height:0;
+border-right:5px solid white;
+border-top:5px solid transparent;
+border-bottom:5px solid transparent;
+display:inline-block;
+position:relative;
+top:1;
+}
+.ui-input-text.ui-custom {
+border:none;
+box-shadow:none;
+}
+.ui-btn-active {
+color:white !important;
+background: #DA2121 !important;
+border: none;
+box-shadow:none;
+}
+#navigation {
+background:white !important;
+border:1px solid white;
+}
+.arrow_ing {
+width:0;
+height:0;
+border-left:8px solid transparent;
+border-right:8px solid transparent;
+border-bottom:8px solid #E6E6E6;
+}
+#ing_lst {
+border-bottom-left-radius : 5px;
+border-bottom-right-radius : 5px;
+border-top-right-radius : 5px;
+}
+.post {
+-webkit-transition-duration:2s;
+-webkit-transform : rotateX(30deg);
+}
+#progressbox {
+position:relative;
+width:100%;
+margin: 0px;
+text-align:left;
+border-radius: 15px;
+background-color: green;
+display:none;
+}
+#progressbar {
+height:5px;
+border-radius: 15px;
+background-color: red;
+width:50%;
+}
+#uprogressbox {
+position:relative;
+width:100%;
+margin: 0px;
+text-align:left;
+border-radius: 15px;
+display:none;
+}
+#uprogressbar {
+height:5px;
+border-radius: 15px;
+background-color: red;
+width:0%;
+}
+#statustxt {
+top:0px;
+left:50%;
+position:absolute;
+display:inline-block;
+color: black;
+font-weight:bold;
+}
+.bar {
+background:#fff;
+display:block;
+width:30px;
+height:2px;
+border-radius:5px;
+margin:4px;
+}
+.pencil{
+    position: relative;
+    width: 0.35em;
+    height: 0.8em;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: 1.4em;
+}
+.pencil:before{
+    content: "";
+    position: absolute;
+    top: -0.35em;
+    left: 0;
+    width: 0.35em;
+    height: 0.3em;
+    background: #fff;
+    border-radius: 0.1em;
+}
+.pencil:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0.85em;
+  	left: 0;
+    border: solid 0.2em #fff;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: solid 0.45em #fff;
+}
+.upa {
+-webkit-transform:rotate(-38deg);
+background:#fff;
+display:block;
+width:17px;
+height:2px;
+margin:4px;
+border-radius:5px;
+}
+.downa{
+-webkit-transform:rotate(38deg);
+background:#fff;
+display:block;
+width:17px;
+height:2px;
+margin:4px;
+border-radius:5px;
+}
+.ba{
+background:#fff;
+display:block;
+width:26px;
+height:2px;
+border-radius:5px;
+margin:4px;
+margin-left:5px;
+}
+</style>
+<title>Cookzz - Share recipes with Love !!</title>
+<script type="text/javascript" src="jquery-latest.js"></script>
+<script type="text/javascript" src="jq/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="post.js"></script>
+<link rel="stylesheet" href="jq/jquery.mobile-1.4.5.min.css"/>
+<meta name="viewport" content="initial-scale=1 , maximum-scale=1">
+</head>
+<body>
+<div data-role="page" id="main">
+<div id="info">
+<div id="fname"></div>
+<div id="lname"></div>
+<div id="pic"></div>
+<div id="followers"></div>
+<div id="following"></div>
+<div id="favourite"></div>
+<div id="mseg"></div>
+<div id="notify"></div>
+<div id="userid"></div>
+<div id="email"></div>
+<div id="comment_hold"></div>
+<div id="msz_hold"></div>
+<div id="msz_name"></div>
+<div id="current_page"></div>
+<div id="address"></div>
+<div id="window_scroll"></div>
+<div id="viewpro"></div>
+<div id="hold_postid"></div>
+<div id="newsFeed_min"></div>
+<div id="newsFeed_minid"></div>
+</div>
+<div data-role="header" id="main_head" style="top:0px; border-top: 2px solid #DA2121; z-index:9999; position:fixed; width:100%; background: #DA2121 !important; color:white;">
+<a href="#panel" id="open" class="ui-btn-left" data-role="none" style="padding-top:6px;"><div id="on" align="center"><span class="bar" id="bar1"></span><span class="bar" id="bar2"></span><span class="bar" id="bar3"></span></div></a>
+<h1 style="color:white; font-weight:normal;" id="main_page">Home</h1>
+<div data-role="navbar" style="border:1px solid white;">
+<ul>
+<li><a href="#" onclick="msg();" id="navigation"><img src="images/msz.gif" width="28px" height="28px"/><div id="msg" align="center" style="border-radius:50%; color:white; visibility:hidden; width:20px; font-weight:100; height:20px; position:absolute; top:10%; line-height:22px; left:52%; background-color:#DA2121;"></div></a></li>
+<li><a href="#" onclick="home();" id="navigation"><img src="images/home.gif" id="home_icon"width="28px" height="28px"/></a></li>
+<li><a href="#" onclick="notify();" id="navigation"><img src="images/notify_off.gif" id="notify_icon" width="28px" height="28px"/><div id="pro" align="center" style="border-radius:50%; color:white; width:20px; visibility:hidden; font-weight:100; height:20px; position:absolute; top:10%; line-height:22px; left:52%; background-color:green;"></div></a></li>
+<li><a href="#" onclick="newsFeed();" id="navigation"><img src="images/newsFeed_off.gif" id="nf" width="32px" height="28px" /></a></li>
+</ul>
+<ul>
+<li><div style="background-color:white; border:1px solid white; width:100%; height:3px;"><div id="bar" style="background-color:#DA2121; position:absolute; left:0%; width:25%; height:3px;"></div></div></li>
+</ul>
+<ul style="display:none;" id="internet">
+<li><div style="background-color:yellow; width:100%;"><div align="center" style="color:black; font-weight:700; font-size:10px; line-height:17px;">No Internet Connection</div></div></li> 
+</ul>
+</div>
+</div>
+<div data-role="panel" id="panel" class="ui-responsive-panel" style="background-color:#E1E1E1; position:fixed;">
+<br/>
+<div id="profile_info" style="background-color:white; border-top-right-radius:15px; padding-bottom:5px;"><div style="position:relative;  left:-5%;"><img src="" id="pro_pic" width="92px" height="92px" style="border-radius:50%; margin-top:-7%; border: 2px solid white; vertical-align:middle;"/><span style="padding-left:8%;" /><span id="name" style="position:absolute; margin-top:10px; font-weight:bold; font-size:20px; color:black;"></span></div></div>
+<div id="list">
+<ul id="ul" data-role="listview" data-icon="false">
+<li><a href="#" id="following_no" style="text-decoration:none;">Following<div align="center" id="following_digit"  style="margin-left:5px; background-color:red; float:right; border-radius:50%; font-weight:100; width:22px; height:22px; color:white; display:inline-block;">0</div></a></li>
+<li><a href="#" id="followers_no"style="text-decoration:none;">Followers<div align="center" id="followers_digit" style="margin-left:5px; background-color:red; float:right; border-radius:50%;  font-weight:100; width:22px; height:22px; color:white; display:inline-block;">0</div></a></li>
+<li><a href="#" id="favourite_no" style="text-decoration:none;">Favourites<div align="center" id="favourite_digit" style="margin-left:5px; background-color:red; float:right; border-radius:50%;  font-weight:100; width:22px; height:22px; color:white; display:inline-block;">0</div></a></li>
+<li><a href="#settings" style="text-decoration:none;">Settings</a></li>
+<li style="border-bottom-left-radius: 15px;"><a href="#" class="logout" style="text-decoration:none;">Logout</a></li>
+</ul>
+</div>
+<input type="search" placeholder="Search people ..." id="search" onfocus="search();"/>
+ <img src="images/fb.png" width="40px" height="40px" id="fb" /> <img src="images/whatsapp.png" width="46px" height="46px" id="whatsapp" style="float:right;"/>
+</div>
+<div data-role="content" id="news_parent" style="padding-top:101px;">
+<div width="100%" id="sort_sel" align="center" style="visibility:hidden; height:0px;"></div>
+<center><div class="loader1"><img src='images/GIF2.gif' style="height:32px; width:32px;" /></div></center>
+<center><div class="loader0"><img src='images/GIF.gif' style="height:32px; width:32px; margin-top:50%;" /></div></center>
+<div id="news" style="padding-top:100px;">
+</div>
+<div id="compose" align="center" style="z-index:99999; position:absolute; box-shadow: 1px 2px 1px 0px #6E6E6E; width:52px; height:52px; right:30px; top:430; background-color:#DA2121; border-radius:50%;"><a href="#post"><div style="padding-top:30%;" align="center"><div class="pencil"></div></div></a></div>
+<center><div class="loader2"><img src='images/GIF2.gif' style="height:32px; width:32px;" /></div></center>
+</div>
+</div>
+<div data-role="page" id="comm_page">
+<div class="loader"></div>
+<div data-role="header" style="border-top: 2px solid #DA2121; background: #DA2121 !important; color:white; z-index:9999; position:fixed; width:100%;">
+<a href="#" data-rel="back" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;">Comment</h1>
+</div>
+<div data-role="content" width="100%" style="padding-left:0px; padding-top:60px;">
+<div id="comm_src" style="width:90%; overflow-y:auto; padding-left:15px;">
+</div>
+<div	id="box" style="position:fixed; width:100%; padding-left:0px; background-color:white;">
+<table width="100%" style="margin-left:10%;"><td width="70%">
+<input type="text" id="share" name="share" placeholder="Type here..." data-wrapper-class="ui-custom" style="background-color:white; border-bottom: 2px solid #ff0000; border-left:2px solid white; border-right:2px solid white; border-top:2px solid white;"/></td>
+<td style="padding-left:10px;">
+<img src="images/send.png" width="32px" height="32px" class="comm_butt" />
+</td></table>
+</div>
+</div>
+</div>
+<div data-role="page" id="msz" style="background-color:#E6E6E6;">
+<div class="loader"></div>
+<div data-role="header" style="border-top: 2px solid #DA2121; background: #DA2121 !important; color:white; z-index:9999; position:fixed; width:100%;">
+<a href="#"  data-rel="back" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;" id="nam">Message</h1>
+</div>
+<div data-role="content" style="background-color:#E6E6E6; padding-left:0px; padding-top:50px;">
+<div id="mszg" style="overflow-y:auto;">
+</div>
+<div	id="footer" class="footer" style="position:fixed; width:100%; padding-left:0px; background-color:white;">
+<table width="100%" style="margin-left:10%;"><td width="70%">
+<input type="text" id="msg_val" placeholder="Type here..." data-wrapper-class="ui-custom" style="background-color:white; border-bottom: 2px solid #ff0000; border-left:2px solid white; border-right:2px solid white; border-top:2px solid white;"/></td>
+<td style="padding-left:10px;">
+<img src="images/send.png" width="32px" height="32px" class="send" />
+</td></table>
+</div>
+</div>
+</div>
+<div data-role="page" id="msz_lst">
+<div class="loader"></div>
+<div data-role="header" style="border-top: 2px solid #DA2121; background: #DA2121 !important; color:white;">
+<a href="#main" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;">Message</h1>
+</div>
+<div data-role="content">
+<ul id="lst" data-role="listview" data-inset="false" data-icon="false">
+</ul>
+</div>
+</div>
+<div data-role="page" id="viewprofile">
+<div data-role="header" style="border: 1px solid #DA2121; right:0px; position:fixed; left:0px; top:0px; z-index:9999;  width:100%; background: #DA2121 !important; color:white;">
+<a href="#main" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white;  font-weight:normal;" id="see">View Profile</h1>
+</div>
+<div data-role="content" style="padding-left:0px; width:100%;">
+<div id="about" style=" box-shadow: 0px 1px 0px 0px #ccc;">
+<div style="height:150px; background-color:white; width:100%; padding-top:0px; background-image: url(images/timeline.jpg);">
+<div style="padding-left:20px; padding-top:80px;">
+<img src="" id="per_pic" width="120px" height="120px" style="box-shadow: 2px 2px 0px 0px #ccc; border-radius:50%; border:5px solid white; background-color:#F7F4F4;" />
+</div>
+</div>
+<h3 style="padding-left:170px" id="per_name"></h3>
+<table style="padding-left:150px; margin-bottom:10px;" id="myTable">
+</table>
+<br/>
+<table id="per_info" width="100%" style="margin-bottom:10px;">
+</table>
+<div align="center" style="color:black; width:100%; height:40px;">
+<span style="line-height:20px;"><span id="post_no" style="font-size:13;">0</span><br/>Recipe</span>
+</div>
+</div>
+<div data-role="popup" id="uppro" data-position-to ="window" data-overlay-theme="b" style="width:300px;">
+<form action="http://localhost/cookzz/upload.php" method="post" enctype="multipart/form-data" id="UploadPro">
+<input name="file" type="file" id="file" class="file" style="display:none;"/>
+<div id="preview_box" style="width:100%; max-height:300px; padding-left:0px; margin-bottom:5px;"><img id="img" src="images/upload.png" style="width:100%; height:100%;"/><img id="delimg" src="images/cross.png" style="width:18px; height:18px; position:absolute; left:95%; visibility:hidden;" /></div>
+<div id="uprogressbox"><div id="uprogressbar"></div></div>
+<div id="uoutput"></div>
+</form>
+</div>
+<div id="feed" style="padding-left:5%; width:90%;">
+</div>
+</div>
+</div>
+<div data-role="page" id="social">
+<div class="loader"></div>
+<div data-role="header" style="border: 1px solid #DA2121; right:0px; position:fixed; left:0px; top:0px; z-index:9999;  width:100%; background: #DA2121 !important; color:white;">
+<a href="#main" data-rel="back" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;" id="curr_social"></h1>
+</div>
+<div data-role="content" id="load_fav" style="padding-top:50px; padding-left:10px;">
+<table id="load_social" width="100%"></table> 
+</div>
+</div>
+<div data-role="page" id="search_page">
+<div data-role="header" style="">
+<div style="padding-left:20px; padding-right:20px;">
+<input type="search" id="search_key" class="search_key"/>
+</div>
+</div>
+<div data-role="navbar" style="padding-top:0px;">
+<ul style="padding-top:0px;">
+<li style="padding-top:0px;"><a href="#" id="people" style='color:black;'>People</a></li>
+<li style="padding-top:0px;"><a href="#" class="recipe" id="recipe" style="color:black;">Recipe</a></li>
+</ul>
+</div>
+<div data-role="content" id="search_list">
+<font color="green">Type a name to search...</font><br/><br/>
+<b><font color="black" size="1">Foodora @ 2015. All Rights Reserved.</font></b>
+</div>
+</div>
+<div data-role="page" id="viewpost" style="width:100%;">
+<div class="loader"></div>
+<div data-role="header" class="view_head" style="border: 0px solid #DA2121; padding-right:0px; position:fixed; padding-left:0px; top:0px; z-index:9999; width:100%; background-color: rgba(213, 33, 33 , 0.0);" id="post_header">
+<a href="#main" id="back" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;" id="post_title"></h1>
+<span class="ui-btn-right" id="del"></span>
+</div>
+<div data-role="content" id="post_content" style="position:absolute; background-color:#FAFAFA; padding-right:0px; padding-top:0px; width:100%; padding-left:0px; word-break: break-all;">
+<div data-role="popup" id="confirm" data-position-to ="window" data-overlay-theme="b"><div data-role="header">Delete</div><p>Are you sure want to delete this post ?</p><table style="padding-left:30%; width:30%;" cellspacing="5"><tr><td><input type="button" class="delete" value="Delete"/></td><td><input type="button" class="Cancel" value="Cancel"/></td></tr></table></div>
+</div>
+</div>
+<div data-role="page" id="post" style="width:100%;">
+<div data-role="header" style="background: #DA2121 !important; border-top: 1px solid #DA2121;">
+<a href="#main" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:18px; width:18px;" /></a>
+<h1 style="color:white; font-weight:normal;">Post</h1>
+</div>
+<div data-role="content">
+<div data-role="popup" id="alert" data-position-to ="window" data-overlay-theme="b">
+<p id="alert_msz">You missed Title !!</p>
+<span style="padding-left:35%; width:30%;"><a href="#alert" dat-rel="close" style="text-decoration:none;"><input type="button" value="Ok" /></a></span>
+</div>
+<a href="#alert" data-rel="popup" id="alert_pop" data-transition="pop" style="visibility:hidden;">Alert</a>
+<form action="#" id="pst_frm">
+<table width="100%" border="0">
+  <tr>
+    <td><div id="preview" class="preview" style="width:100%;" ><img id="previewimg" class="previewimg" src="images/upload.png" style="width:100%; max-height:350px;"/><img id="deleteimg" class="deleteimg" src="images/cross.png" style="width:18px; height:18px; position:absolute; left:90%; visibility:hidden;" /></div></td>
+  </tr>
+</table>
+<div id="progressbox"><div id="progressbar"></div></div>
+<div id="output"></div>
+<div id = "name_recipe"><input type="text" id="title" name="title" class="title" onkeyup="chk();" style="font-size:20px; font-weight:bold; border: 1px solid white;" placeholder="Name of The Recipe..." /></div>
+<select name="share" id="share_opt" style="font-size:20px;"><option value="Recipe">Recipe</option><option value="Idea">Idea</option><option value="Trick">Trick</option><option value="Innovation">Innovation</option></select>
+Ingredients <font color="grey">(Optional)</font>
+<div id="post" align="center">
+<div id ="ingredient" style="border-radius:10px;"><input type="text" id="1I" name="1I" placeholder="Ingredient" style="font-size:15px;"><input type="text" placeholder="Qty" id="1Q" name="1Q" style="font-size:15px;"><select id="1S" name="1S" data-native-menu="false" style="font-size:15px;"><option value="Drop">Drop</option><option value="Pinch">Pinch</option><option value="Spoon">Spoon</option><option value="Table Spoon">Table Spoon</option><option value="Cup">Cup</option><option value="Bunch">Bunch</option><option value="Inch">Inch</option><option value="Gram">Gram</option><option value="Kilogram">Kilogram</option><option value="Packet">Packet</option><option value="Jar">Jar</option><option value="Millilitre">Millilitre</option><option value="Litre">Litre</option><option value="Glass">Glass</option><option value="Taste">Taste</option><option value="Piece">Piece</option><option value="Beaten">Beaten</option></select></div>
+</div>
+<input type="button" class="add" value="Add" onclick="coloum();"/>
+<input type="text" id="count" name="count" value="1" style="font-size:0px;"/>
+<div id="about_box" style=" border-radius:15px;"><textarea rows="4" cols="50" onkeyup="chek();"  name="about" class="about" style="resize:none; border : solid 1px white; " placeholder="About.."></textarea></div>
+<div id="process_box" style=" border-radius:15px;"><textarea rows="4" cols="50" onkeyup="tag();" id="process" name="process" class="process" style="resize:none; border : solid 1px white; " placeholder="Process (Optional)"></textarea></div>
+<div style="padding-left:5px; visibility:hidden;" id="arrow_pro"><div class="arrow_ing"></div></div><div id="tag_lst" style="background-color:#E6E6E6; border-radius:5px;"><div style="padding-left:5px;" id="tag"></div></div>
+It takes <div style="display:inline-block; width:32px;"><input type="number" name="minu" id="minu"/></div> minutes to prepare and has <div style="display:inline-block; width:32px;"><input type="number" name="serv" id="serv"/></div> servings.<br/><br/>
+<input type="button"  id="up_post" value="Upload"/>
+</form>
+</div>
+</div>
+<div data-role="page" id="settings">
+<div data-role="header" id="hey" style="border: 0px solid #DA2121; padding-right:0px; position:fixed; padding-left:0px; top:0px; z-index:9999; width:100%; background-color: rgba(213, 33, 33 , 10);">
+<a href="#" data-rel="back" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;">Settings</h1>
+</div>
+<div data-role="content" style="padding-top:42px; background-color:#F2F2F2;">
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E;" id="acc"><font size="4" color="#6E6E6E">Account Setting</font><br/><span style="color:#848484;">Configure your account settings</span><br/><br/></div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;"><font size="4" color="#6E6E6E">Vibrate on Messages</font>
+<div data-role="feildcontain" style="display:inline-block; float:right;">
+<select name="flip1" id="VM" data-role="slider" data-mini="true">
+<option value="nope">Nope</option>
+<option value="yep">Yep</option>
+</select></div><br/><span style="color:#848484;">Vibrate everytime you received message</span><br/><br/></div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;"><font size="4" color="#6E6E6E">Vibrate on Notification</font>
+<div data-role="feildcontain" style="display:inline-block; float:right;">
+<select name="flip1" id="VN" data-role="slider" data-mini="true">
+<option value="nope">Nope</option>
+<option value="yep">Yep</option>
+</select></div><br/><span style="color:#848484;">Vibrate everytime you received notification</span><br/><br/></div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;"><font size="4" color="#6E6E6E">Beep on Messages</font>
+<div data-role="feildcontain" style="display:inline-block; float:right;">
+<select name="flip1" id="BM" data-role="slider" data-mini="true">
+<option value="nope">Nope</option>
+<option value="yep">Yep</option>
+</select></div><br/><span style="color:#848484;">Beep everytime you received message</span><br/><br/></div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;"><font size="4" color="#6E6E6E">Beep on Notification</font>
+<div data-role="feildcontain" style="display:inline-block; float:right;">
+<select name="flip1" id="BN" data-role="slider" data-mini="true">
+<option value="nope">Nope</option>
+<option value="yep">Yep</option>
+</select></div><br/><span style="color:#848484;">Beep everytime you received notification</span><br/><br/></div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;"><font size="4" color="#6E6E6E">Change Resolution</font><br/>
+<span style="color:#848484;">Change resolution of app but can cause misbehaviour</span>
+<div data-role="feildcontain" style="">
+<input type="range" name="slider-range" id="range" value="50" min="0" max="100" step="50" onchange="change(this.value)" oninput="change(this.value)" data-highlight="true" data-theme="a"/>
+</div><br/></div>
+</div>
+</div>
+<div data-role="page" id="acc_set" style="background-color:#F2F2F2;">
+<div data-role="header" id="hey" style="border: 0px solid #DA2121; padding-right:0px; position:fixed; padding-left:0px; top:0px; z-index:9999; width:100%; background-color: rgba(213, 33, 33 , 10);">
+<a href="#" data-rel="back" class="ui-btn ui-btn-icon-notext ui-corner-all ui-nodisc-icon" style="background-color:transparent !important; border:0 !important; padding-top:8px; padding-left:3px;"><img src="images/back-white.png" style="height:15px; width:15px;" /></a>
+<h1 style="color:white; font-weight:normal;">Account Setting</h1>
+</div>
+<div data-role="content" style="padding-top:42px; background-color:#F2F2F2;">
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;">
+<table width="100%"><tr><td><font size="4" color="#6E6E6E">Name:</font></td><td><input type="text" id="namo" /></td></tr></table>
+</div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;">
+<table width="100%"><tr><td><font size="4" color="#6E6E6E">Current Password:</font></td><td><input type="password" id="curr_pass" /></td></tr>
+<tr><td><font size="4" color="#6E6E6E">New Password:</font></td><td><input type="password" id="pass1" /></td></tr>
+<tr><td><font size="4" color="#6E6E6E">Confirm Password:</font></td><td><input type="password" id="pass2" /></td></tr></table>
+</div>
+<div style="margin-top:5px; border-bottom:1px solid #6E6E6E; vertical-align:middle;">
+<div data-role="feildcontain" style="display:inline-block;">
+<legend><font size="4" color="#6E6E6E">Gender</font></legend>
+<fieldset data-role="controlgroup" data-type="horizontal">
+<input type="radio" id="male" name="gen" class="gender" value="Male" />
+<label for="male">Male</label>
+<input type="radio" id="female" name="gen" class="gender" value="Female" />
+<label for="female">Female</label></fieldset></div><br/><span style="color:#848484;"></span><br/></div>
+<input type="button" value="Save" id="acc_save" />
+</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+$(".loader1").fadeOut("fast");
+$(".loader2").fadeOut("fast");
+$(".loader").fadeOut("fast");
+$(".loader0").slideToggle();
+$(window).load(function() {
+$(window).scrollTop(0);
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+$("#mszg").css('width' , $(window).width()+'px');
+$("#compose").css('visibility' , 'visible');
+var t = setInterval(function() {
+uptodate();
+},2000);
+});
+document.getElementById("address").innerHTML = window.location;
+$('#btn').css('background-color' , '#DA2121');
+var add = document.getElementById("address").innerHTML;
+var temp = add.split("=");
+var startID = '';
+var closeID = '';
+var Nstart = '';
+var Nclose = '';
+var Nmin = '';
+var startID_notify = '';
+var closeID_notify = '';
+var URL = '';
+var del = '';
+var user = '';
+var conv = '';
+var mess = '';
+$("#info").hide();
+if(localStorage.getItem("setting")) {
+var t = JSON.parse(localStorage.getItem("setting"));
+$("#VN").val(t.VN);
+$("#VM").val(t.VM);
+$("#BN").val(t.BN);
+$("#BM").val(t.BM);
+}
+if(!localStorage.getItem("setting")) {
+var setting = {};
+setting.VN = $("#VN").val();
+setting.VM = $("#VM").val();
+setting.BM = $("#BM").val();
+setting.BN = $("#BN").val();
+localStorage.setItem("setting" ,   JSON.stringify(setting));
+}
+$(document).ready(function() {
+var k = setInterval(function() {
+var url = "http://localhost/cookzz/info.php?id="+temp[1]; //GET INFO ABOUT LOGGED IN USERS
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#fname").html(this['fname']);
+$("#lname").html(this['lname']);
+$("#pic").html(this['pic']);
+$("#followers").html(this['followers']);
+$("#following").html(this['following']);
+$("#favourite").html(this['favourites']); 
+$("#mseg").html(this['msg']);
+$("#notify").html(this['notify']);
+$("#userid").html(this['userid']);
+$("#email").html(this['email']);
+});
+});
+$("#UploadPro").attr('action' , 'http://localhost/cookzz/upload.php');
+},2000);
+});
+$(document).ready(function() {
+var iurl = "http://localhost/cookzz/info.php?id="+temp[1];
+$.getJSON(iurl , function(data) {
+$.each(data.result, function() {
+document.getElementById("userid").innerHTML = this['userid'];
+$('input:radio[name=gen]').filter('[value='+this['sex']+']').prop('checked' , true);
+$("#namo").val(this['fname']+' '+this['lname']);
+});
+});
+});
+newsFeed(); //GET NEWS FEED(GET ALL POST OF WHOM USER IS FOLLOWING)
+document.getElementById("bar").style.left = '75%';
+$("#profile_info").attr('id' , $("#userid").html());
+$("#profile_info").attr('name' , $("#fname").html()+' '+$("#lname").html());
+function notify() { //GET USERS Notification
+$('#main_page').text('Notification');
+$("#home_icon").attr('src' , 'images/home_off.gif');
+$("#notify_icon").attr('src' , 'images/notify.gif');
+$("#nf").attr('src' , 'images/newsFeed_off.gif');
+$(".loader0").fadeIn();
+$("#compose").css('visibility' , 'hidden');
+var left_val = document.getElementById("bar").style.left;
+var inc = parseFloat(document.getElementById("bar").style.left);
+$("#bar").stop().animate({left: "50%"} , 500);
+$("#sort_sel").css('visibility' , 'hidden');
+$("#sort_sel").css('height' , '0px');
+$("#sort_sel").empty();
+$("#news").html('');
+$(document).ready(function() {
+var url = "http://localhost/cookzz/notification.php?id="+$("#userid").html()+"&&action=normal";
+$.getJSON(url , function(data) {
+$("#news").html('');
+$.each(data.result, function() {
+$("#news").append("<div id='notify"+this['id']+"' style='width:100%; margin-bottom:10px; margin-top:5px; position:relative;'><img src='http://localhost/cookzz/"+this['pro']+"' width='70px' height='60px' style=' border-radius:5px; vertical-align:middle; margin-right:10px;'/><span style='position:absolute; line-height:20px;'><font size='2'>"+this['link']+"</font><br/><font size='1' color='grey'>"+this['time']+"</font></span></div>");
+});
+if(data.result.length == 0) {
+$("#news").html('');
+$("#news").append('<br/><br/><div id="notify'+this['id']+'" class="no_notify" align="center" style="color:grey;"><h3>No new notification....<h3></div>');
+}
+$(".loader0").slideToggle();
+var DataLen = data.result.length - 1;
+startID_notify = data.result[0].id;
+closeID_notify = data.result[DataLen].id;
+}) .fail(function() {
+$("#news").html('');
+$(".loader0").slideToggle();
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+}
+function home() { //GET USERS POSTS
+$("#news").html('');
+$("#home_icon").attr('src' , 'images/home.gif');
+$("#notify_icon").attr('src' , 'images/notify_off.gif');
+$("#nf").attr('src' , 'images/newsFeed_off.gif');
+$(".loader0").fadeIn();
+$("#bar").stop().animate({left: "25%"} , 500);
+$("#sort_sel").css('visibility' , 'hidden');
+$("#sort_sel").css('height' , '0px');
+$("#sort_sel").empty();
+$("#news").css('padding-top' , '100px');
+$("#compose").css('visibility' , 'visible');
+$(document).ready(function() {
+var url = "http://localhost/cookzz/Login.php?id="+$("#userid").html()+"&&action=normal&&sess_id="+$("#userid").html();
+$.getJSON(url , function(data) {
+$("#news").html('');
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style=" margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-left:2px; margin-bottom:10px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+else
+{
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word; margin-left:2px; font-size:15px; margin-bottom:10px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+});
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) {
+$(o[u]).html('You');
+}
+}
+if(data.result.length == 0) {
+$("#news").html('');
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>No feeds yet shared....</h3><a href="#" onclick="newsFeed();" style="text-decoration:none; color:white;"><p style="text-align:center; font-weight:100; border-radius:5px; background-color:orange; font-size:20px; width:180px; height:28px;">Go to News Feed</p></a></div>');
+}
+$(".loader0").slideToggle();
+var DataLen = data.result.length - 1;
+startID = data.result[0].postid;
+closeID = data.result[DataLen].postid;
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) {
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) 
+ .fail(function() {
+ $("#news").html('');
+ $(".loader0").slideToggle();
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+$('#main_page').text('Home');
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+}
+function newsFeed() { //NEWSFEED FUNCTION
+$("#news").html('');
+$("#home_icon").attr('src' , 'images/home_off.gif');
+$("#notify_icon").attr('src' , 'images/notify_off.gif');
+$("#nf").attr('src' , 'images/newsFeed.gif');
+$("#sort_sel").empty();
+$("#bar").stop().animate({left: "75%"} , 500);
+$("#sort_sel").css('visibility' , 'visible');
+$("#sort_sel").css('height' , '');
+$('<select>').attr({'name': 'sort' , 'id':'sort' , 'data-native-menu': 'false'}).appendTo('#sort_sel');
+$('<option>').attr({'value': 'Order By Likes'}).html('Order By Likes').appendTo("#sort");
+$('<option>').attr({'value': 'Order By Newest'}).html('Order By Newest').appendTo("#sort");
+$("#sort").css('border' , 'none');
+$("#sort").css('box-shadow' , 'none');
+$("#sort").selectmenu();
+$(".loader0").fadeIn();
+$("#compose").css('visibility' , 'visible');
+$(document).ready(function() {
+var url = "http://localhost/cookzz/Member.php?id="+temp[1]+"&&action=Order By Likes&&sess_id="+temp[1]; //PHP PAGE NAME IS MEMBER.PHP BUT YOU CAN RENAME IT TO NEWSFEED.PHP
+$.getJSON(url , function(data) {
+$("#news").html('');
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-bottom:10px; margin-left:2px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+else
+{
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word;  font-size:15px; margin-left:2px; margin-bottom:10px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+});
+if(data.result.length == 0) {
+$("#news").html('');
+$("#news").append('<br/><br/><div class="post" align="center" style="color:grey;"><h3>No feeds yet shared....<h3></div>');
+}
+$(".loader0").slideToggle();
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) { //IF THE POST IS POSTED BY YOU THEN INSTEAD OF NAME IT SHOWS "YOU"
+$(o[u]).html('You');
+}
+}
+var NDataLen = data.result.length - 1;
+Nstart = data.result[0].postid;
+Nclose = data.result[NDataLen].postid;
+$("#newsFeed_min").html(data.min[0].min);
+$("#newsFeed_minid").html(data.min[0].minid);
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) { //SOME DESIGN WHEN POST ARRIVED ON SCREEN
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) .fail(function() {
+$("#news").html('');
+$(".loader0").slideToggle();
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+});
+$("#sort").change(function() {
+$("#news").empty();
+$(".loader0").fadeIn();
+var url = "http://localhost/cookzz/Member.php?id="+$("#userid").html()+"&&action="+$("#sort").val()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-bottom:10px; margin-left:2px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+else
+{
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word;  font-size:15px; margin-left:2px; margin-bottom:10px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) {
+$(o[u]).html('You');
+}
+}
+});
+if(data.result.length == 0) {
+$("#news").append('<br/><br/><div class="post" align="center" style="color:grey;"><h3>No feeds yet shared....<h3></div>');
+}
+var NDataLen = data.result.length - 1;
+Nstart = data.result[0].postid;
+Nclose = data.result[NDataLen].postid;
+$("#newsFeed_min").html(data.min[0].min);
+$("#newsFeed_minid").html(data.min[0].minid);
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) {
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) .fail(function() {
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+$(".loader0").slideToggle();
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+});
+$('#main_page').text('News Feed');
+}
+$(document).on('pageinit' , '#main' , function() { //FOR SWIPE FUNCTIONS BETWEEN TABS
+$(document).on("swiperight" , "#main" , function(e) {
+if($.mobile.activePage.jqmData("panel") !== "open") {
+if(e.type === "swiperight") {
+if($("#nf").attr('src') == 'images/newsFeed.gif') {
+notify();
+}else if($("#home_icon").attr('src') == 'images/home.gif') {
+$("#panel").panel("open");
+}else if($("#notify_icon").attr('src') == 'images/notify.gif') {
+home();
+}
+}
+}
+});
+$(document).on("swipeleft" , "#main" , function(e) {
+if($.mobile.activePage.jqmData("panel") !== "open") {
+if(e.type === "swipeleft") {
+if($("#nf").attr('src') == 'images/newsFeed.gif') {
+}else if($("#home_icon").attr('src') == 'images/home.gif') {
+notify();
+}else if($("#notify_icon").attr('src') == 'images/notify.gif') {
+newsFeed();
+}
+}
+}
+});
+});
+var mg = 0;
+var noti = 0;
+function uptodate() {
+if($("#mseg").html() > 0) {
+$("#msg").css('visibility' , 'visible');
+$("#msg").html($("#mseg").html());
+if($("#mseg").html() > mg) {
+mg = $("#mseg").html();
+var q = JSON.parse(localStorage.getItem("setting"));
+if(q.VM == "yep") {
+navigator.notification.vibrate(100);
+} 
+if(q.BM == "yep") {
+navigator.notification.beep(2);
+} 
+}
+}
+else
+{
+$("#msg").css('visibility' , 'hidden');
+}
+if($("#notify").html() > 0) {
+$("#pro").css('visibility' , 'visible');
+$("#pro").html($("#notify").html());
+if($("#notify").html() > noti) {
+noti = $("#notify").html();
+var q = JSON.parse(localStorage.getItem("setting"));
+if(q.VN == "yep") {
+navigator.notification.vibrate(100);
+} 
+if(q.BN == "yep") {
+navigator.notification.beep(2);
+} 
+}
+}
+else
+{
+$("#pro").css('visibility' , 'hidden');
+}
+$("#pro_pic").attr("src" , 'http://localhost/cookzz/'+$("#pic").html());
+$("#name").html('<a href="#" id='+$("#userid").html()+' name="'+$("#fname").html()+' '+$("#lname").html()+'" class="viewprofile" style="text-decoration:none; color:black;">'+$("#fname").html()+' '+$("#lname").html()+'</a>');
+$("#following_digit").html($("#following").html());
+$("#followers_digit").html($("#followers").html());
+$("#favourite_digit").html($("#favourite").html());
+var internet = navigator.onLine;
+if(internet) {
+$("#internet").slideUp();
+}else{
+$("#internet").slideDown();
+}
+}
+$(document).ready(function() {
+$(document).on('click' , '#following_no' , function() { //GET FOLLOWING LIST
+$.mobile.changePage('#social', {transition: 'pop'});
+$("#load_fav").html('<table id="load_social" width="100%"></table> ');
+$('#curr_social').text('Following');
+$("#close").click();
+var url = "http://localhost/cookzz/following.php?id="+$("#userid").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#load_social").append('<tr><td><img src="http://localhost/cookzz/'+this['img']+'" style="width:72px; height: 62px;  border-radius:15px;"/></td><td>'+this['pro']+'</td><td style="padding-left:30px;">'+this['follow']+'</td></tr>');
+});
+if(data.result.length == 0) {
+$("#load_social").append('<br/><br/><div class="fav" align="center" style="color:grey;"><h3>No Following<h3></div>');
+}
+}) .fail(function() {
+$("#load_social").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '#followers_no' , function() { //GET FOLLOWERS LIST
+$.mobile.changePage('#social', {transition: 'pop'});
+$("#load_fav").html('<table id="load_social" width="100%"></table> ');
+$('#curr_social').text('Followers');
+$("#close").click();
+var url = "http://localhost/cookzz/followers_list.php?id="+$("#userid").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#load_social").append('<tr><td><img src="http://localhost/cookzz/'+this['img']+'" style="width:72px; height: 62px;  border-radius:15px;"/></td><td>'+this['pro']+'</td><td style="padding-left:30px;">'+this['follow']+'</td></tr>');
+});
+if(data.result.length == 0) {
+$("#load_social").append('<br/><br/><div class="fav" align="center" style="color:grey;"><h3>No Followers<h3></div>');
+}
+}) .fail(function() {
+$("#load_social").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '#favourite_no' , function() { //GET USER FAVOURITES POST
+$.mobile.changePage('#social', {transition: 'pop'});
+$('#curr_social').text('Favourites');
+$("#close").click();
+$("#load_fav").html('<table id="load_social" width="100%"></table> ');
+var url = "http://localhost/cookzz/favourite.php?id="+$("#userid").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#load_fav").append('<br/><div id="tab'+this['id']+'" width="100%" align="center" style="background-color:#DA2121; border-radius:15px;"><span width="100%"><span align="center">'+this['pro']+'</span><span style="float:right; margin-top:6px; margin-right:5px;">'+this['cross']+'</span></span><br/><img src="http://localhost/cookzz/'+this['img']+'" width="100%" height="200px" /></div>');
+});
+if(data.result.length == 0) {
+$("#load_fav").append('<br/><br/><div class="fav" align="center" style="color:grey;"><h3>No Favourites<h3></div>');
+}
+}) .fail(function() {
+$("#load_fav").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.pro_following' , function() { //GET ANY OTHER USER FOLLOWING LIST 
+$.mobile.changePage('#social', {transition: 'pop'});
+$("#load_fav").html('<table id="load_social" width="100%"></table> ');
+$('#curr_social').text('Following');
+$("#close").click();
+var url = "http://localhost/cookzz/following.php?id="+$("#viewpro").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#load_social").append('<tr><td><img src="http://localhost/cookzz/'+this['img']+'" style="width:72px; height: 62px;  border-radius:15px;"/></td><td>'+this['pro']+'</td><td style="padding-left:30px;">'+this['follow']+'</td></tr>');
+});
+if(data.result.length == 0) {
+$("#load_social").append('<br/><br/><div class="fav" align="center" style="color:grey;"><h3>No Following<h3></div>');
+}
+}) .fail(function() {
+$("#load_social").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.pro_followers' , function() { //GET ANY OTHER USER FOLLOWERS LIST
+$.mobile.changePage('#social', {transition: 'pop'});
+$("#load_fav").html('<table id="load_social" width="100%"></table> ');
+$('#curr_social').text('Followers');
+$("#close").click();
+var url = "http://localhost/cookzz/followers_list.php?id="+$("#viewpro").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#load_social").append('<tr><td><img src="http://localhost/cookzz/'+this['img']+'" style="width:72px; height: 62px;  border-radius:15px;"/></td><td>'+this['pro']+'</td><td style="padding-left:30px;">'+this['follow']+'</td></tr>');
+});
+if(data.result.length == 0) {
+$("#load_social").append('<br/><br/><div class="fav" align="center" style="color:grey;"><h3>No Followers<h3></div>');
+}
+}) .fail(function() {
+$("#load_social").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.pro_favourites' , function() { //GET ANY OTHER USER FAVOURITES LIST
+$.mobile.changePage('#social', {transition: 'pop'});
+$('#curr_social').text('Favourites');
+$("#close").click();
+$("#load_fav").html('<table id="load_social" width="100%"></table> ');
+var url = "http://localhost/cookzz/favourite.php?id="+$("#viewpro").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#load_fav").append('<br/><div id="tab'+this['id']+'" width="100%" align="center" style="background-color:#DA2121; border-radius:15px;"><span width="100%"><span align="center">'+this['pro']+'</span><span style="float:right; margin-top:6px; margin-right:5px;">'+this['cross']+'</span></span><br/><img src="http://localhost/cookzz/'+this['img']+'" width="100%" height="200px" /></div>');
+});
+if(data.result.length == 0) {
+$("#load_fav").append('<br/><br/><div class="fav" align="center" style="color:grey;"><h3>No Favourites<h3></div>');
+}
+}) .fail(function() {
+$("#load_fav").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+});
+});
+function goto() {
+$.mobile.changePage('#comm_page', {transition: 'pop'});
+}
+$(document).on('pagebeforeshow' , '#comm_page' , function() { //GET COMMENTS ON POST
+$(document).ready(function() {
+$('#comm_src').html('');
+$(".loader").fadeIn("slow");
+var url = "http://localhost/cookzz/comment_box.php?id="+$("#comment_hold").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$('#comm_src').append("<div style='position:relative;' id="+this['id']+"><img src='http://localhost/cookzz/"+this['pic']+"' width='48px' height='56px' style='border-radius:10px; vertical-align:top;'/><span style='padding-left:5%;'/><span style='position:absolute; line-height:20px;'><a href='#' id="+this['person_id']+" name='"+this['fname']+" "+this['lname']+"' class='viewprofile'>"+this['fname']+" "+this['lname']+"</a><br/>"+this['cmmnt']+"</span><br/><br/></div>");
+});
+if(data.result.length == 0) {
+$("#comm_src").append('<div class="no_comm" align="center" style="color:grey;"><br/><br/><h3>Be first one to Comment..<h3></div>');
+}
+}) .fail(function() {
+$("#comm_src").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+});
+$(".loader").fadeOut("slow");
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.comm_butt', function() { //SEND COMMENT BUTTON CLICKED
+var a = document.getElementById("share").value.length;
+if(a < 1) {
+alert('please write comment');
+}
+else
+{
+$(".no_comm").css('display' , 'none');
+$('#comm_src').append("<div style='position:relative;'><img src='http://localhost/cookzz/"+$("#pic").html()+"' width='48px' height='56px' style='border-radius:10px; vertical-align:top;'/><span style='padding-left:5%;'/><span style='position:absolute; line-height:20px;'><a href='#' id="+$("#userid").html()+" name='"+$("#fname").html()+" "+$("#lname").html()+"' class='viewprofile'>"+$("#fname").html()+"</a><br/>"+$("#share").val()+"</span><br/><br/></div>");
+var comm = document.getElementById("share").value;
+var dataString = 'share='+comm;
+$.ajax({
+type:"POST",
+url:"http://localhost/cookzz/comment.php?id="+$("#comment_hold").html()+'&&sess_id='+$("#userid").html(),
+data: dataString,
+cache: false,
+success: function(result){
+document.getElementById("share").value = '';
+$("#share").attr('placeholder' , 'Type here...');
+}
+});
+}
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.delcomm', function() { //DELETE COMMENT CLICKED
+var id = $(this).attr('id');
+var name = $(this).attr('name');
+var userid = $(this).attr('userid');
+var dataString = 'id='+ id +'&&postid='+name+'&&userid='+userid;
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/delcomm.php?sess_id="+$("#userid").html(),
+data: dataString,
+cache: false,
+success: function(result){
+$("#"+id+"comm").slideToggle(1);
+}
+});
+});
+});
+function msz() {
+$.mobile.changePage('#msz', {transition: 'slide'});
+$('#mszg').html('');
+$('#nam').text($("#msz_name").html());
+}
+$(document).on('pagebeforeshow' , '#msz' , function() {
+$(document).ready(function() { //GET MESSAGES BETWEEN YOU AND OTHER USER.
+$(".loader").fadeIn("slow");
+var url_msz = "http://localhost/cookzz/message_body.php?id="+$("#msz_hold").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url_msz , function(data) {
+$.each(data.result, function() {
+$('#mszg').append(this['msg']+" "+this['time']+"<br/>");
+});
+if(data.max.length == 0) {
+mess = 0;
+}else{
+mess = data.max[0].max;
+}
+conv = data.result.length;
+if(data.result.length == 0) {
+$("#mszg").append('<div class="conv" align="center" style="color:grey;"><br/><br/><h3>No conversation !!<h3></div>');
+}
+mess = data.max[0].max;
+}) .fail(function() {
+$("#mszg").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}) .done(function() {
+$("#mszg").scrollTop($("#mszg").innerHeight());
+});
+$(".loader").fadeOut("slow");
+});
+});
+var inter;
+$(document).on('pageshow' , '#msz' , function() {
+$(document).ready(function() {
+inter = setInterval(function() { //LOOK ANY NEW MESSAGE
+var leng = document.getElementsByClassName("demo_msz");
+var url_msz = "http://localhost/cookzz/next_msz.php?id="+$("#msz_hold").html()+'&&sess_id='+$("#userid").html()+'&&max='+mess;
+$.getJSON(url_msz , function(data) {
+if(data.result.length != 0) {
+for(var k = 0; k <= leng.length; k++) {
+$(".demo_msz").remove();
+}
+$.each(data.result, function() {
+$('#mszg').append(this['msg']+" "+this['time']+"<br/>");
+});
+mess = data.max[0].max;
+var df = setTimeout(function() {
+$("#mszg").scrollTop($("#mszg").innerHeight());
+}, 2000);
+}
+});
+} , 2000);
+});
+});
+$(document).on('pagehide' , '#msz' , function() {
+$(document).ready(function() {
+clearInterval(inter);
+});
+});
+function msg() {
+$.mobile.changePage('#msz_lst', {transition: 'slide'});
+}
+$(document).on('pagebeforeshow' , '#msz_lst' , function() {
+$(document).ready(function() {
+$('#lst').html('');
+$(".loader").fadeIn("slow"); //SHOW ALL PEOPLE LIST WHOM USER TALKED
+var url = "http://localhost/cookzz/message_list.php?sess_id="+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$('#lst').append("<li><a href='#' id="+this['id']+" name='"+this['fname']+" "+this['lname']+"' pro="+this['img']+" class='msg' style='text-decoration:none;'><img src='http://localhost/cookzz/"+this['img']+"' height='100%'/>"+this['fname']+" "+this['lname']+"<br/><font size='2' color='grey'>"+this['last']+"</font></a></li>").listview('refresh');
+});
+if(data.result.length == 0) {
+$("#lst").append('<div class="conv" align="center" style="color:grey;"><br/><br/><h3>No Messages<h3></div>');
+}
+}) .fail(function() {
+$("#lst").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+$(".loader").fadeOut("slow");
+});
+});
+$(document).ready(function() {
+$(document).on('click', '.msg', function() {
+var msz_id = $(this).attr('id');
+var name = $(this).attr('name');
+var that = this;
+$("#msz_hold").html(msz_id);
+$("#msz_name").html(name);
+msz();
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.send' , function() { //SEND MESSAGE BUTTON CLICKED
+$(".conv").css('display' , 'none');
+$('#mszg').append('<div align="right" class="demo_msz"><div class="txt" style="background-color:white; padding-right:3px;">'+$("#msg_val").val()+' '+'<font size="1" color="grey"> sending..</font></div><span class="arrow"></span><br/></div>');
+var dataString = 'sess_id='+$("#userid").html()+'&&id='+$("#msz_hold").html()+'&&message='+$("#msg_val").val();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/send_message.php",
+data: dataString,
+cache: false,
+success: function(result){
+console.log(result);
+}
+});
+$("#msg_val").val('');
+});
+});
+$(document).ready(function() {
+$(document).on('click', '.viewprofile', function() { //SEE ANY OTHER PROFILE
+var id = $(this).attr('id');
+var name = $(this).attr('name');
+$("#viewpro").html(id);
+$("#see").text(name);
+if($("#userid").html() == $("#viewpro").html()) {
+$.mobile.changePage('#viewprofile', {transition: 'slide'});
+}
+else
+{
+$.mobile.changePage('#viewprofile', {transition: 'slide'});
+}
+});
+});
+$(document).on('pagebeforeshow' , '#viewprofile' , function() {
+$(document).ready(function() {
+$('#feed').html('');
+$(".loader").fadeIn("slow");
+var url = "http://localhost/cookzz/ViewProfile.php?id="+$("#viewpro").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#feed").append('<br/><div class="post" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-bottom:10px; margin-left:2px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+else
+{
+$("#feed").append('<br/><div class="post" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word; margin-left:2px; margin-bottom:10px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) {
+$(o[u]).html('You');
+}
+}
+});
+if(data.result.length == 0) {
+$("#feed").append('<br/><br/><div class="post" align="center" style="color:grey;"><h3>No feeds yet shared....<h3></div>');
+}
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) {
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) .fail(function() {
+$("#feed").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+});
+$(document).ready(function() {
+var url = "http://localhost/cookzz/ViewProfile.php?id="+$("#viewpro").html()+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.info, function() {
+$("#per_pic").attr('src' , 'http://localhost/cookzz/'+this['pro_pic']);
+$("#per_name").text(this['fname']+' '+this['lname']);
+var status = this['follow'];
+$("#per_info").html('');
+$("#myTable").html('');
+if($("#userid").html() == $("#viewpro").html()) {
+}
+else
+{
+$("#myTable").append("<td>"+status+"</td><td><span style='padding-left:20px;'><a href='#' id="+$("#viewpro").html()+" name='"+this['fname']+" "+this['lname']+"' class='msg' style='text-decoration:none; background-color:orange; color:white; padding-left:4px; padding-bottom:1px; font-weight:100; box-shadow: 2px 2px 0px 0px #ccc; padding-right:4px; border-radius:2px; font-size:15px;'>Message</a></td>");
+}
+$("#per_info").append('<td style="border-right:2px solid black;" align="center"><a href="#" class="pro_followers" style="text-decoration:none; font-size:15px; color:black;">'+this['followers']+'<br/><font color="grey">Followers</font></a></td><td style="border-right:2px solid black;" align="center"><a href="#" class="pro_following"  style="text-decoration:none; font-size:15px; color:black;">('+this['following']+')<br/><font color="grey">Following</font></a></td><td align="center"><a href="#" class="pro_favourites" style="text-decoration:none; font-size:15px; color:black;">('+this['favourite']+')<br/><font color="grey">Favourites</font></a></td>');
+$("#post_no").html(this['post']);
+});
+});
+});
+$(".loader").fadeOut("slow");
+});
+$(document).ready(function() {
+window.height = $(window).height();
+var msz_box = window.height - 120;
+var footer = window.height - 60;
+$("#footer").css('top' , footer+'px'); //SET MESSAGE BOX ACCORDING TO MOBILE SCREEN
+$("#mszg").css('height' , msz_box+'px');
+$(window).resize(function() {
+window.currentHeight = $(this).height();
+window.heightDiff = window.height - window.currentHeight;
+window.footer = window.currentHeight - 60;
+var hei = window.currentHeight - 75;
+if(window.heightDiff > 0) {
+$("#footer").css('top' , window.footer+'px');
+$("#mszg").css('height' , hei+'px');
+$("#mszg").scrollTop($("#mszg").height());
+}
+else
+{
+$("#footer").css('top' , footer+'px');
+$("#mszg").css('height' , msz_box+'px');
+}
+});
+});
+$(document).ready(function() {
+window.height = $(window).height();
+var msz_box = window.height - 120;
+var box = window.height - 60;
+$("#box").css('top' , footer+'px'); //SET COMMENT BOX ACCORDING TO MOBILE SCREEN
+$("#comm_src").css('height' , msz_box+'px');
+$(window).resize(function() {
+window.currentHeight = $(this).height();
+window.heightDiff = window.height - window.currentHeight;
+window.footer = window.currentHeight - 60;
+if(window.heightDiff > 0) {
+$("#box").css('top' , window.footer+'px');
+$("#comm_src").css('height' , window.currentHeight+'px');
+$("#comm_src").scrollTop = $("#comm_src").scrollHeight;
+}
+else
+{
+$("#box").css('top' , footer+'px');
+$("#comm_src").css('height' , msz_box+'px');
+}
+});
+});
+function search() {
+$.mobile.changePage('#search_page', {transition: 'slidedown'});
+}
+$(document).on('pagebeforeshow' , '#search_page' , function() {
+$(document).ready(function() {
+$("#people").addClass("ui-btn-active");
+var timeout = setTimeout(function() {
+$("#search_key").focus();
+},1000);
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '#people' , function() {
+var name = $("#search_key").val();
+$.post('http://localhost/cookzz/search.php' , {peo:name} , function(data) { //SEARCH PEOPLE BY NAME
+$('#search_list').html(data);
+});
+});
+$(document).on('click' , '#recipe' , function() {
+var name = $("#search_key").val();
+$.post('http://localhost/cookzz/search_rec.php' , {rec:name} , function(data) { //SEARCH POST BY TITLE
+$('#search_list').html(data);
+});
+});
+});
+$(document).on('pageinit', function(event) {
+$('#search_key').keyup(function() {
+if($("#people").css('background-color') == 'rgb(218, 33, 33)') {
+var name = $("#search_key").val();
+$.post('http://localhost/cookzz/search.php' , {peo:name} , function(data) {
+$('#search_list').html(data);
+});
+}else{
+var name = $("#search_key").val();
+$.post('http://localhost/cookzz/search_rec.php' , {rec:name} , function(data) {
+$('#search_list').html(data);
+});
+}
+});
+});
+$(document).ready(function() {
+$(document).on('click' , '.viewpost', function() {
+var id = $(this).attr('id');
+$("#hold_postid").html(id);
+$.mobile.changePage('#viewpost', {transition: 'pop'});
+});
+});
+$(document).on('pagebeforeshow' , '#viewpost' , function() {
+$(".loader").fadeIn("slow");
+var url = "http://localhost/cookzz/viewpost.php?id="+$("#hold_postid").html()+'&&sess_id='+$("#userid").html();
+$("#post_content").html('');
+$("#post_header").css('background-color' , 'rgba(213, 33, 33 , 0)');
+$.getJSON(url , function(data) { //GET POST INFO
+$.each(data.result, function() {
+if(this['img'] == '') {
+$("#post_content").append("<div style='width:100%;'><img src='http://localhost/cookzz/images/logo.png' style='width:100%; max-height:500px;'/></div><span width='100%'><table width='100%' cellspacing='5'><tr><td><div align='left'><img src='http://localhost/cookzz/"+this['pro']+"' id="+this['userid']+" name='"+this['fname']+" "+this['lname']+"' class='viewprofile' style='vertical-align:middle; border-radius:50%; width:42px; height:42px;'/><font size='2px'>(<I>"+this['fname']+" "+this['lname']+"</I>)</font></div></td><td><div align='right'>"+this['like']+" <div style='vertical-align:top; display:inline-block;'>"+this['fav']+"</div></div></td></tr></table></span><span style='word-break:keep-all;'><font size='4px'><b><center>"+this['title']+"</center></b></font></span><br/><center><div align='left' style='border-radius:5px; font-size:15px; word-break:break-word; font-family:arial; padding-left:2.5%; width:97.5%;'>"+this['about']+"</div></center><br/><span width='100%' class='togg'><table width='100%'><tr><td align='left'><font size='4px'>Ingredients</font></td><td id='serv_no' style='color:grey; font-size:12px;' align='right'></td></tr></table></span><div id='tab' style='padding-left:10px;'><div class='arrow_ing'></div><div style='background-color:#E6E6E6; padding-left:5px; color:black; width:90%;'><table id='ing_lst'></table></div><br/></div><span width='100%' class='togg'><table width='100%'><tr><td align='left'><font size='4px'>Process</font></td><td style='color:grey; font-size:12px;' align='right'></td></tr></table></span><div id='coll_pro' style='padding-left:2.5%; width:100%;'><div style='padding-left:10px;'><div class='arrow_ing'></div></div><div id='process_lst' style='background-color:#E6E6E6; color:black; padding-left:2.5%; padding-right:2.5%; border-radius:5px; word-break:break-word; width:90%;'></div><br/>It require "+this['minu']+" minutes to prepare .<br/><a href='#' id="+this['postid']+" class='comment' style='text-decoration:none; color:white;'><p style='text-align:center; font-weight:100; margin-left:55%; border-radius:5px; background-color:orange; font-size:20px; width:140px; height:25px;'>Write a Review</p></a></div>");
+}
+else
+{
+$("#post_content").append("<div style='width:100%;'><img src='http://localhost/cookzz/"+this['img']+"' style='width:100%; max-height:500px;'/></div><span width='100%'><table width='100%' cellspacing='5'><tr><td><div align='left'><img src='http://localhost/cookzz/"+this['pro']+"' id="+this['userid']+" name='"+this['fname']+" "+this['lname']+"' class='viewprofile' style='vertical-align:middle; border-radius:50%; width:42px; height:42px;'/><font size='2px'>(<I>"+this['fname']+" "+this['lname']+"</I>)</font></div></td><td><div align='right'>"+this['like']+" <div style='vertical-align:top; display:inline-block;'>"+this['fav']+"</div></div></td></tr></table></span><span style='word-break:keep-all;'><font size='4px'><b><center>"+this['title']+"</center></b></font></span><br/><center><div align='left' style='border-radius:5px; font-size:15px; word-break:break-word; font-family:arial; padding-left:2.5%; width:97.5%;'>"+this['about']+"</div></center><br/><span width='100%' class='togg'><table width='100%'><tr><td align='left'><font size='4px'>Ingredients</font></td><td id='serv_no' style='color:grey; font-size:12px;' align='right'></td></tr></table></span><div id='tab' style='padding-left:10px;'><div class='arrow_ing'></div><div style='background-color:#E6E6E6; padding-left:5px; color:black; width:90%;'><table id='ing_lst'></table></div><br/></div><span width='100%' class='togg'><table width='100%'><tr><td align='left'><font size='4px'>Process</font></td><td style='color:grey; font-size:12px;' align='right'></td></tr></table></span><div id='coll_pro' style='padding-left:2.5%; width:100%;'><div style='padding-left:10px;'><div class='arrow_ing'></div></div><div id='process_lst' style='background-color:#E6E6E6; color:black; padding-left:2.5%; padding-right:2.5%; border-radius:5px; word-break:break-word; width:90%;'></div><br/>It require "+this['minu']+" minutes to prepare .<br/><br/><a href='#' id="+this['postid']+" class='comment' style='text-decoration:none; color:white;'><p style='text-align:center; font-weight:100; margin-left:55%; border-radius:5px; background-color:orange; font-size:20px; width:140px; height:25px;'>Write a Review</p></a></div>");
+}
+var process = this['process'];
+var part = process.split('.');
+$("#process_lst").append('<div style="background-color:white;  max-width:300px;  display:inline-block; visibility:hidden; border-radius:5px; margin-bottom:2px;"></div>');
+var count_no = 0;
+for(var o = 0; o < part.length; o++) {
+if(part[o] == '') {
+}else{
+count_no = count_no + 1 ;
+$("#process_lst").append("<div style='background-color:white; color:black; max-width:270px; padding-left:5px; padding-right:5px; display:inline-block; border-radius:5px; margin:7px;'>"+count_no+") "+part[o]+"</div>");
+}
+}
+$("#process_lst").append('<div style="background-color:white;  max-width:300px; padding-left:5px; padding-right:5px; display:inline-block; visibility:hidden; border-radius:5px; margin-top:2px;"></div>');
+$("#serv_no").html('Serving '+this['serv']);
+del = '';
+user = '';
+if(process.length == 0) {
+$("#process_lst").append('No Process :(');
+}
+if(this['del'] == '') {
+$("#del").html("");
+}else{
+$("#del").attr('delid' , this['del']);
+$("#del").html("<img src='images/delete.png' width='22px' height='22px'/>");
+del = this['del'];
+user = this['userid'];
+}
+var open = this['open'];
+for(var i = 1; i <= this['count']; i++) {
+var start = open.indexOf(i+"#$%")+4;
+var close = open.indexOf('%$#'+i);
+var stop = close - start;
+var ing = open.substr(start ,stop);
+var spi = ing.split('-');
+$("#ing_lst").append('<tr><td align="left">'+spi[1]+' <font size="2">'+spi[2]+'</font></td><td style="padding-left:10px;">'+spi[0]+'</td></tr><br/>');
+}
+if(this['count'] == 0) {
+$("#ing_lst").append('<tr><td>No Ingredient :(</td></tr>');
+}
+});
+}) .fail(function() {
+$("#post_content").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+$(".loader").fadeOut("slow");
+});
+$(document).ready(function() {
+$("#viewpost").scroll(function() {
+if($("#viewpost").scrollTop() > 145) {
+$("#post_header").css('background-color' , 'rgba(213, 33, 33 , 1)');
+$("#post_header").css('position' , 'fixed');
+}
+else
+{
+var opa = $("#viewpost").scrollTop() / 14.5;
+var vdot = '.'+opa;
+var str = vdot.substr(0,2);
+$("#post_header").css('background-color' , 'rgba(213, 33, 33 , '+str+')');
+$("#post_header").css('position' , 'fixed');
+}
+});
+$("#del").click(function() {
+$("#confirm").popup("open");
+});
+$(".Cancel").click(function() {
+$("#confirm").popup("close");
+});
+$(".delete").click(function() {
+$(".delete").attr('disabled' , 'disabled');
+$(".delete").attr("value" , "Deleting..");
+$(".delete").button("refresh");
+var dataString = "id="+del+"&&user="+user;
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/delpost.php", //DELETE POST
+data: dataString,
+cache: false,
+success: function(result){
+$(".delete").removeAttr('disabled');
+$(".delete").attr("value" , "Delete");
+$(".delete").button("refresh");
+$("#back").click();
+var y = setTimeout(function() {
+home();
+}, 1000);
+}
+});
+});
+});
+$(document).on('pageinit' , '#main' , function() {
+var touchMe = $('#news');
+var startY = '';
+var scrollAmt = '';
+var diffr = '';
+$(document).ready(function(){
+$(document).scroll(function() {
+scrollAmt = $(window).scrollTop();
+});
+});
+touchMe[0].ontouchstart = function(e) {
+var touche = e.touches[0];
+startY = touche.clientY;
+}
+touchMe[0].ontouchmove = function(e) {
+var touch = e.touches[0];
+diffr = touch.clientY - startY;
+if(parseInt(diffr) < 200 && scrollAmt == 0) {
+if($("#nf").attr('src') == 'images/newsFeed.gif') {
+}
+else
+{
+$("#news").css('padding-top' , diffr);
+}
+}
+else
+{
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+}
+}
+touchMe[0].ontouchend = function(e) {
+if(parseInt(diffr) > 50 && scrollAmt == 0) {
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+if($("#home_icon").attr('src') == 'images/home.gif') {
+$(".loader1").fadeIn("slow");
+var url = "http://localhost/cookzz/Login.php?id="+$("#userid").html()+"&&start="+parseInt(startID)+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) { //GET USER POSTS
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#home"+startID).before('<div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; font-weight:700; color:black;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-bottom:10px; margin-left:2px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div><br/>');
+}
+else
+{
+$("#home"+startID).before('<div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; font-weight:700; color:black;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word; margin-left:2px; margin-bottom:10px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div><br/>');
+}
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) {
+$(o[u]).html('You');
+}
+}
+});
+if(data.result[0].postid == '') {
+}else{
+startID = data.result[0].postid;
+}
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) {
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) .fail(function() {
+$("#home"+startID).append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+$(".loader1").slideToggle();
+}
+if($("#notify_icon").attr('src') == 'images/notify.gif') { 
+$(".loader1").fadeIn("slow");
+$(".loader1").css('background-color' , '');
+var url = "http://localhost/cookzz/notification.php?id="+$("#userid").html()+"&&new="+startID_notify+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+$("#news").before("<div id='notify"+this['id']+"' style='width:100%'><img src='http://localhost/cookzz/"+this['pro']+"' width='70px' height='60px' style='vertical-align:middle; border-radius:5px;'/><span style='padding-left:10px;'></span><span style='position:fixed; line-height:20px;'><font size='2'>"+this['link']+"</font><br/><font size='1'>"+this['time']+"</font></span></div><br/>");
+});
+var DataLen = data.result.length - 1;
+startID_notify = data.result[0].id;
+closeID_notify = data.result[DataLen].id;
+}) .fail(function() {
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+$(".loader1").slideToggle();
+}
+}
+else
+{
+$("#news").stop().animate({paddingTop: "0px"} , 1000);
+}
+diffr = '';
+}
+});
+
+$(document).ready(function() {
+$(document).scroll(function() {
+var doc = $(document).height() - 1;
+var winh = $(window).height();
+var wins = $(window).scrollTop();
+var hs = winh + wins;
+if(hs == doc) {
+if($("#home_icon").attr('src') == 'images/home.gif') {
+$(".loader2").fadeIn("slow");
+var url = "http://localhost/cookzz/Login.php?id="+$("#userid").html()+"&&close="+parseInt(closeID)+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; font-weight:700; color:black;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-left:2px; margin-bottom:10px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+else
+{
+$("#news").append('<br/><div class="post" id="home'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; font-weight:700; color:black;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word; margin-left:2px; margin-bottom:10px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) {
+$(o[u]).html('You');
+}
+}
+});
+var DataLen = data.result.length - 1;
+closeID = data.result[DataLen].postid;
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) {
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) .fail(function() {
+$("#news").append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+$(".loader2").fadeOut("slow");
+}
+if($("#nf").attr('src') == 'images/newsFeed.gif') {
+$(".loader2").fadeIn("slow");
+if($("#sort").val() == "Order By Likes") {
+var min = $("#newsFeed_min").html();
+}
+else
+{
+var min = $("#newsFeed_minid").html();
+}
+var url = "http://localhost/cookzz/Member.php?id="+$("#userid").html()+"&&action="+$("#sort").val()+"&&old="+min+'&&sess_id='+$("#userid").html();
+$.getJSON(url , function(data) {
+$.each(data.result, function() {
+if(this['postimg'] == '') {
+$("#news").append('<br/><div class="post" id="newsf'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></font></span><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div style="word-wrap:break-word; margin-bottom:10px; margin-left:2px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+else
+{
+$("#news").append('<br/><div class="post" id="newsf'+this['postid']+'" style="background-color:white;"><img src="http://localhost/cookzz/'+this['pro_pic']+'" style="border-radius:50%; width:50px; height:50px; vertical-align:middle;"/><span style="padding-left:5px;" /><span style="position:absolute; line-height:30px;"><a href="#" id='+this['userid']+' name="'+this['fname']+' '+this['lname']+'" class="viewprofile" style="text-decoration:none; color:#BD1717;">'+this['fname']+' '+this['lname']+'</a><font size="1" color="grey"> shared a '+this['share']+'<br/><span style="float:left; line-height:0px;">'+this['time']+'</span></span></font><span style="float:right"><span style="margin-right:10px; margin-top:0px; color:grey; font-size:13;">'+this['minu']+' <img src="images/clock2.png" width="15px" height="15px" style="vertical-align:middle;"/></span>'+this['add']+'</span><br/><div align="center" style="margin-bottom:5px;"><a href="#" class="viewpost" id='+this['postid']+' style="text-decoration:none; color:black; font-weight:700;">'+this['title']+'</a></div><div align="center" style="margin-bottom:5px; background-color:#E6E6E6;"><img src='+this['postimg']+' class="viewpost" id='+this['postid']+' width="100%" style="max-height:300px;"/></div><div style="word-wrap:break-word; margin-left:2px; margin-bottom:10px; font-size:15px;">'+this['desc']+'</div><div style="background-color:#fff; color:grey;"><table width="100%"><td align="left"><font size="3">'+this['like_no']+'</font>.<font size="2">'+this['comm_no']+'</font></td><td align="right">'+this['like']+' '+this['comment']+'</td></table></div></div>');
+}
+var o = document.getElementsByClassName("viewprofile");
+for(var u = 0; u < o.length; u++) {
+if($("#userid").html() == $(o[u]).attr('id')) {
+$(o[u]).html('You');
+}
+}
+});
+var NDataLen = data.result.length - 1;
+Nstart = data.result[0].postid;
+Nclose = data.result[NDataLen].postid;
+$("#newsFeed_min").html(data.min[0].min);
+$("#newsFeed_minid").html(data.min[0].minid);
+var to = setTimeout(function() {
+var io = document.getElementsByClassName("post");
+for(var i=0; i < io.length; i++) {
+io[i].style.webkitTransform = "rotateX(0deg)";
+}
+} , 500);
+}) .fail(function() {
+$("#home"+startID).append('<br/><br/><div class="post" id="home'+this['postid']+'" align="center" style="color:grey;"><h3>Failed to load , try again :( <h3></div>');
+}); 
+$(".loader2").slideToggle();
+}
+}
+});
+});
+$(document).ready(function() {
+$(document).on('panelbeforeclose' , function(event , ui) {
+$("#bar1").stop().animate({width: "30px"} , 500);
+$("#bar3").stop().animate({width: "30px"} , 500);
+});
+$(document).on('panelbeforeopen' , function(event , ui) {
+$("#bar1").stop().animate({width: "20px"} , 500);
+$("#bar3").stop().animate({width: "20px"} , 500);
+});
+});
+$(document).ready(function() {
+$(document).bind("scroll" , function() {
+var amt = $(window).height() - 100;
+if($(window).scrollTop() == 0) {
+$("#compose").css("top" , amt);
+}else{
+$("#compose").css("top" , $(window).scrollTop()+amt);
+}
+});
+});
+$(document).ready(function() {
+$("#per_pic").on('click' , function() { //PROFILE PIC CHANGE
+if($("#userid").html() == $("#viewpro").html()) {
+$("#uppro").popup("open");
+}
+});
+$("#preview_box").on('click' , function() {
+navigator.camera.getPicture(success, function(message) {
+alert("Something wen't wrong");
+} , {
+quality:50,
+destinationType: navigator.camera.DestinationType.FILE_URI ,
+sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+});
+});
+var imageURI = '';
+function success(URL) {
+imageURI = URL;
+window.resolveLocalFileSystemURI(imageURI , function(entry) {
+var fileExt = entry.fullPath.substr((entry.fullPath.lastIndexOf('.')+1));
+                if(fileExt == 'jpg' || fileExt == 'png' || fileExt == 'jpeg' || fileExt == 'gif') {
+				document.getElementById("img").src = entry.fullPath;
+				var options = new FileUploadOptions();
+options.fileKey="file";
+options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+options.mimeType="image/jpeg";
+
+var params = new Object();
+params.id = $("#userid").html();
+params.fname = $("#fname").html();
+params.lname = $("#lname").html();
+params.email = $("#email").html();
+options.params = params;
+options.chunkedMode = false;
+$("body").addClass("ui-disabled");
+$.mobile.loading("show" , {theme:'b' , text:"Uploading..." , textonly:false, textVisible:true});
+var ft = new FileTransfer();
+ft.upload(imageURI , $("#UploadPro").attr('action') , win, fail, options);
+}else{
+				alert("You can't upload image type of "+fileExt);
+				}}, function() {
+alert("error"); } , onError);
+function onError() {
+alert("Error");
+}
+function win(r) {
+alert("Upload Sucessful");
+console.log(r.responseCode+" "+r.response+" "+r.bytesSent);
+$("body").removeClass("ui-disabled");
+$.mobile.loading("hide");
+}
+function fail(error) {
+alert("Something wen't wrong , please try again");
+console.log(error.code);
+$("body").removeClass("ui-disabled");
+$.mobile.loading("hide");
+}
+}
+});
+$(document).ready(function() {
+$(".preview").on('click' , function() {
+navigator.camera.getPicture(preview, function(message) {
+alert("Something wen't wrong");
+} , {
+quality:50,
+destinationType: navigator.camera.DestinationType.FILE_URI ,
+sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+});
+});
+function preview(URI) {
+URL = URI;
+window.resolveLocalFileSystemURI(URL , function(entry) {
+var fileExt = entry.fullPath.substr((entry.fullPath.lastIndexOf('.')+1));
+                if(fileExt == 'jpg' || fileExt == 'png' || fileExt == 'jpeg' || fileExt == 'gif') {
+				document.getElementById("previewimg").src = entry.fullPath;
+				$("#deleteimg").css('visibility' , 'visible');
+				}else{
+				alert("You can't upload image type of "+fileExt);
+				URL = '';
+				}
+				}, function() {
+alert("error"); 
+URL = ''; } , onError);
+function onError() {
+alert("Error");
+URL = '';
+}
+}
+$("#up_post").on('click' , function() { //UPLOAD POST BUTTON CLICKED
+if(document.getElementById("title").value == "") {
+document.getElementById("title").style.border = "2px solid red";
+$("#alert_msz").html("You missed the Title");
+$("#alert_pop").click();
+return false;
+}
+if($(".about").val() == ''){
+$(".about").css('border' , '2px solid red');
+$("#alert_msz").html("You missed About");
+$("#alert_pop").click();
+return false;
+}
+if($("#minu").val().length < 1) {
+$("#alert_msz").html("You missed the Minutes");
+$("#alert_pop").click();
+return false;
+}
+if($("#serv").val().length < 1) {
+$("#alert_msz").html("You missed the Servings no.");
+$("#alert_pop").click();
+return false;
+}
+var k = document.getElementById("count").value;
+for(var i =1; i <= k; i++) {
+if(document.getElementById(i+'I').value.length > 1 && document.getElementById(i+'Q').value == ""){
+document.getElementById(i+'Q').style.border ="2px solid red";
+$("#alert_msz").html("You missed Quantity of "+i+" Ingredient");
+$("#alert_pop").click();
+return false;
+}else if (document.getElementById(i+'Q').value.length > 1 && document.getElementById(i+'I').value == ""){
+document.getElementById(i+'I').style.border ="2px solid red";
+$("#alert_msz").html("You missed Ingredient of "+i+" Ingredient");
+$("#alert_pop").click();
+return false;
+}
+if(document.getElementById(i+'Q').value == "" && document.getElementById(i+'I').value == "") {
+var pst = document.getElementById("post");
+var ind = document.getElementById(i+'I');
+var quan = document.getElementById(i+'Q');
+var sele = document.getElementById(i+'S');
+var cut = document.getElementById(i);
+remo(i);
+}
+}
+if(URL.length > 0) {
+var options = new FileUploadOptions();
+options.fileKey="Image";
+options.fileName=URL.substr(URL.lastIndexOf('/')+1);
+options.mimeType="image/jpeg";
+var params = new Object();
+var c = document.getElementById("count").value;
+for(var x=1; x <= c; x++) {
+params[x+"I"] = $("#"+x+"I").val();
+params[x+"Q"] = $("#"+x+"Q").val();
+params[x+"S"] = $("#"+x+"S").val();
+}
+params["title"] = $("#title").val();
+params["about"] = $(".about").val();
+params["process"] = $(".process").val();
+params["minu"] = $("#minu").val();
+params["serv"] = $("#serv").val();
+params["share"] = $("#share_opt").val();
+params["count"] = $("#count").val();
+params["sess_fname"] = $("#fname").html();
+params["sess_lname"] = $("#lname").html();
+params["sess_id"] = $("#userid").html();
+params["sess_email"] = $("#email").html();
+options.params = params;
+options.chunkedMode = false;
+$("body").addClass("ui-disabled");
+$.mobile.loading("show" , {theme:'b' , text:"Uploading..." , textonly:false, textVisible:true});
+var ft = new FileTransfer();
+ft.upload(URL , 'http://localhost/cookzz/post_action.php' , win, fail, options);
+function win(r) {
+alert("Upload Sucessful");
+console.log(r.responseCode+" "+r.response+" "+r.bytesSent);
+$("#pst_frm")[0].reset();
+$("#tag").html('');
+URL = '';
+$("#previewimg").attr('src' , 'images/upload.png');
+$("#deleteimg").css('visibility' , 'hidden');
+$("body").removeClass("ui-disabled");
+$.mobile.loading("hide");
+}
+function fail(error) {
+alert("Something wen't wrong , please try again");
+console.log("Error: "+error.code);
+$("body").removeClass("ui-disabled");
+$.mobile.loading("hide");
+}
+}else{
+var params = new Object();
+var c = document.getElementById("count").value;
+for(var x=1; x <= c; x++) {
+params[x+"I"] = $("#"+x+"I").val();
+params[x+"Q"] = $("#"+x+"Q").val();
+params[x+"S"] = $("#"+x+"S").val();
+}
+params["title"] = $("#title").val();
+params["about"] = $(".about").val();
+params["process"] = $(".process").val();
+params["minu"] = $("#minu").val();
+params["serv"] = $("#serv").val();
+params["share"] = $("#share_opt").val();
+params["count"] = $("#count").val();
+params["sess_fname"] = $("#fname").html();
+params["sess_lname"] = $("#lname").html();
+params["sess_id"] = $("#userid").html();
+params["sess_email"] = $("#email").html();
+$("body").addClass("ui-disabled");
+$.mobile.loading("show" , {theme:'b' , text:"Uploading..." , textonly:false, textVisible:true});
+$.ajax({
+type:"POST",
+url:"http://localhost/cookzz/post_action.php",
+data: params,
+cache: false,
+success: function(result){
+alert("Upload Sucessful");
+console.log(result);
+$("#pst_frm")[0].reset();
+$("#tag").html('');
+URL = '';
+$("#previewimg").attr('src' , 'images/upload.png');
+$("#deleteimg").css('visibility' , 'hidden');
+$("body").removeClass("ui-disabled");
+$.mobile.loading("hide");
+}
+});
+}
+});
+});
+$(document).ready(function() {
+$("#deleteimg").on('click' , function() {
+$("#previewimg").attr('src' , 'images/upload.png');
+$("#deleteimg").css('visibility' , 'hidden');
+URL = '';
+});
+$("#acc").on('click' , function() {
+$.mobile.changePage('#acc_set', {transition: 'slide'});
+});
+$(".logout").on('click' , function() {
+$.mobile.loading("show" , {theme:'b' , text:"Signing out ..." , textonly:false, textVisible:true});
+localStorage.removeItem('login');
+window.location = 'index.html';
+$.mobile.loading("hide");
+}); 
+$("#VN").on("change" , function() {
+var setting = {};
+setting.VN = $("#VN").val();
+setting.VM = $("#VM").val();
+setting.BM = $("#BM").val();
+setting.BN = $("#BN").val();
+localStorage.setItem("setting" ,   JSON.stringify(setting));
+});
+$("#VM").on("change" , function() {
+var setting = {};
+setting.VN = $("#VN").val();
+setting.VM = $("#VM").val();
+setting.BM = $("#BM").val();
+setting.BN = $("#BN").val();
+localStorage.setItem("setting" ,   JSON.stringify(setting));
+});
+$("#BN").on("change" , function() {
+var setting = {};
+setting.VN = $("#VN").val();
+setting.VM = $("#VM").val();
+setting.BM = $("#BM").val();
+setting.BN = $("#BN").val();
+localStorage.setItem("setting" ,   JSON.stringify(setting));
+});
+$("#BM").on("change" , function() {
+var setting = {};
+setting.VN = $("#VN").val();
+setting.VM = $("#VM").val();
+setting.BM = $("#BM").val();
+setting.BN = $("#BN").val();
+localStorage.setItem("setting" ,   JSON.stringify(setting));
+});
+$("#acc_save").on('click' , function() { //CHANGE PASSWORD
+if($("#pass1").val() == '' || $("#pass2").val() == '') {
+alert("Password can't be empty !!");
+return false;
+}else if($("#pass1").val() != $("#pass2").val()) {
+alert("Password do not match !!");
+return false;
+}else if($("#curr_pass").val() == '') {
+alert("Enter current password !!");
+return false;
+}
+if($("#pass1").val() == $("#pass2").val()) {
+var radio = $('input[type=radio]:checked').val();
+$("#acc_save").attr('disabled' , 'disabled');
+$.mobile.loading("show" , {theme:'b'});
+var dataString = 'curr='+$("#curr_pass").val()+'&&fname='+$("#namo").val()+'&&lname=&&password='+$("#pass1").val()+'&&sex='+radio+'&&sess_id='+$("#userid").html();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/update.php",
+data: dataString,
+cache: false,
+success: function(result){
+if(result == 'Ok') {
+alert("Sucessfully Updated");
+}else{
+alert(result);
+}
+}
+});
+}else{
+alert("Password are not same");
+}
+$("#acc_save").removeAttr('disabled');
+$.mobile.loading("hide");
+});
+});
+function change(val) {
+if(val == 0) {
+$('meta[name=viewport]').attr('content' , 'initial-scale=0.9, maximum-scale=0.9');
+}else if(val == 50) {
+$('meta[name=viewport]').attr('content' , 'initial-scale=1, maximum-scale=1');
+}else if(val == 100) {
+$('meta[name=viewport]').attr('content' , 'initial-scale=1.1, maximum-scale=1.1');
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script type="text/javascript">
+$(document).ready(function() { 
+$(document).on('click', '.like', function() { //.LIKE CLASS IS SAME IN LIKE AND UNLIKE BUTTON BOTH, WE RECOGNIZE BY IT'S TITLE ATTRIBUTE
+if($(this).attr('title')=='Like'){ //LIKE FUNCTION
+var pst_id = $(this).attr('id');
+var that = this;
+$(that).html('<img src="images/unlike.png" width="24px" height="24px"/>'); //ITS LIKED, SO NOW SHOW BUTTON OF UNLIKE
+$(that).attr('title' , 'Unlike');
+var a = $(".num"+pst_id);
+for( var i=0; i < a.length; i++) { 
+var count = a[i].innerHTML;
+count++;
+a[i].innerHTML = count;
+}
+var dataString = 'id='+ $(this).attr('id')+'&&sess_id='+$("#userid").html();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/like.php", //IF POST IS LIKED BY USER THEN IT WILL UNLIKE AND VICE VERSA
+data: dataString,
+cache: false,
+success: function(result){
+} ,
+error: function() {
+$(that).html('<img src="images/like.png" width="24px" height="24px"/>');
+$(that).attr('title' , 'Like');
+var a = $(".num"+pst_id);
+for( var i=0; i < a.length; i++) { 
+var count = a[i].innerHTML;
+count--;
+a[i].innerHTML = count;
+}
+}
+});
+}else{
+if($(this).attr('title')=='Unlike'){ //UNLIKE FUNCTION (UNLIKE MEANS, USER HAVE DONE NOTHING TO POST && THERES NO UNLIKE/DOWNVOTE FEATURE, UNLIKE IS BLANK OR NOTHING)
+var pst_id = $(this).attr('id');
+var that = this;
+$(that).html('<img src="images/like.png" width="24px" height="24px"/>'); //ITS UNLIKED, SO NOW SHOW BUTTON OF LIKE
+$(that).attr('title' , 'Like');
+var a = $(".num"+pst_id);
+for( var i=0; i < a.length; i++) { 
+var count = a[i].innerHTML;
+count--;
+a[i].innerHTML = count;
+}
+var dataString = 'id='+ $(this).attr('id')+'&&sess_id='+$("#userid").html();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/like.php",
+data: dataString,
+cache: false,
+success: function(result){
+} , 
+error: function() {
+$(that).html('<img src="images/unlike.png" width="24px" height="24px"/>');
+$(that).attr('title' , 'Unlike');
+var a = $(".num"+pst_id);
+for( var i=0; i < a.length; i++) { 
+var count = a[i].innerHTML;
+count++;
+a[i].innerHTML = count;
+}
+}
+});
+}
+}
+});
+});
+$(document).ready(function() { //THIS ALSO WORKS SAME LIKE LIKE/UNLIKE FUNCTION
+$(document).on('click', '.fav', function() { //CLICKED ADD TO FAVOURITE BUTTON
+if($(this).attr('title')=='Add to Favourite'){
+var pst_id = $(this).attr('id');
+var that = this;
+$(that).html('<img src="images/added.png" width="24px" height="24px" style="vertical-align:middle;"/>');
+$(that).attr('title' , 'Added to Favourite');
+var dataString = 'id='+ $(this).attr('id')+'&&sess_id='+$("#userid").html();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/add_favourite.php",
+data: dataString,
+cache: false,
+success: function(result){
+} , 
+error: function() {
+$(that).html('<img src="images/add.png" width="24px" height="24px" style="vertical-align:middle;"/>');
+$(that).attr('title' , 'Add to Favourite');
+}
+});
+}else{
+var pst_id = $(this).attr('id');
+var that = this;
+var dataString = 'fav_id='+ $(this).attr('id')+'&&sess_id='+$("#userid").html();
+$(that).html('<img src="images/add.png" width="24px" height="24px" style="vertical-align:middle;"/>');
+$(that).attr('title' , 'Add to Favourite');
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/favourite.php", //THIS REMOVED FAVOURITE
+data: dataString,
+cache: false,
+success: function(result){
+} , 
+error: function() {
+$(that).html('<img src="images/added.png" width="24px" height="24px" style="vertical-align:middle;"/>');
+$(that).attr('title' , 'Added to Favourite');
+}
+});
+}
+});
+});
+$(document).ready(function() { //FOLLOW / UNFOLLOW (SAME LIKE LIKE/UNLIKE FUNCTION ONLY DIFF IS SEPARATE PHP FILE FOR BOTH FOLLOW/UNFOLLOW)
+$(document).on('click' , '.follow', function() {
+if($(this).attr('title')=='Unfollow'){
+var pst_id = $(this).attr('id');
+var that = this;
+$(that).text('Follow');
+$(that).attr('title' , 'Follow');
+$(that).css('border' , '1px solid green');
+$(that).css('color' , 'green');
+var hell = document.getElementById("click").innerHTML;
+var spi = hell.split("(");
+var spil = parseInt(spi[1]) - 1;
+document.getElementById("click").innerHTML = "("+spil+")";
+var dataString = 'id='+ $(this).attr('id')+'&&sess_id='+$("#userid").html();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/unfollow.php",
+data: dataString,
+cache: false,
+success: function(result){
+} , 
+error: function() {
+$(that).text('Unfollow');
+$(that).attr('title' , 'Unfollow');
+$(that).css('border' , '1px solid red');
+$(that).css('color' , 'red');
+var hell = document.getElementById("click").innerHTML;
+var spi = hell.split("(");
+var spil = parseInt(spi[1]) + 1;
+document.getElementById("click").innerHTML = "("+spil+")";
+}
+});
+}else { 
+if($(this).attr('title')=='Follow'){
+var pst_id = $(this).attr('id');
+var that = this;
+$(that).text('Unfollow');
+$(that).attr('title' , 'Unfollow');
+$(that).css('border' , '1px solid red');
+$(that).css('color' , 'red');
+var hell = document.getElementById("click").innerHTML;
+var spi = hell.split("(");
+var spil = parseInt(spi[1]) + 1;
+document.getElementById("click").innerHTML = "("+spil+")";
+var dataString = 'id='+ $(this).attr('id') +'&&sess_id='+$("#userid").html();
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/follow.php",
+data: dataString,
+cache: false,
+success: function(result){
+} , 
+error: function() {
+$(that).text('Follow');
+$(that).attr('title' , 'Follow');
+$(that).css('border' , '1px solid green');
+$(that).css('color' , 'green');
+var hell = document.getElementById("click").innerHTML;
+var spi = hell.split("(");
+var spil = parseInt(spi[1]) - 1;
+document.getElementById("click").innerHTML = "("+spil+")";
+}
+});
+}
+}
+});
+});
+$(document).ready(function() {
+$(document).on('click', '.image', function() {
+var pst_id = $(this).attr('id');
+$(this).attr('title' , 'Removed');
+var dataString = 'fav_id='+ $(this).attr('id') +'&&sess_id='+$("#userid").html();
+$("#tab"+pst_id).slideToggle(1000);
+$.ajax({
+type:"GET",
+url:"http://localhost/cookzz/favourite.php",
+data: dataString,
+cache: false,
+success: function(result){
+}
+});
+});
+});
+$(document).ready(function() {
+$(document).on('click', '.comment', function() {
+var pst_id = $(this).attr('id');
+$("#comment_hold").html(pst_id);
+goto();
+});
+$("#whatsapp").on('click' , function() {
+var whatsapp = "whatsapp://send?text=Look what I found on play store to share my recipes - https://play.google.com/store/apps/details?id=com.recipes.social.network";
+window.location.href = whatsapp;
+});
+$("#fb").on('click' , function() {
+window.open('fb://publish/profile/me?text=foo','_system','location=yes');
+});
+});
+</script>
