@@ -17,5 +17,5 @@ It is an unique social network cooking community Android App where people can po
 <br/><br/>We are very happy by giving you a platform where you can express your heart feeling with taste.
 We are always to be in help of you. We just want to make your cooking easier and easier. <br/> **Share your recipes with love :)**
 ```
-CONTACT:{{NAME:Aditya Raj},{EMAIL:aditraj2@gmail.com}}
+CONTACT:{NAME:Aditya Raj,EMAIL:aditraj2@gmail.com}
 ```
